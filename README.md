@@ -1,3 +1,1059 @@
 ---
-license: mit
+tags:
+- mteb
+model-index:
+- name: piccolo-large-zh
+  results:
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/AFQMC
+      name: MTEB AFQMC
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 51.40548754569409
+    - type: cos_sim_spearman
+      value: 54.168222315174376
+    - type: euclidean_pearson
+      value: 52.40464973459636
+    - type: euclidean_spearman
+      value: 54.26249134589867
+    - type: manhattan_pearson
+      value: 52.353782691201246
+    - type: manhattan_spearman
+      value: 54.20648078023014
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/ATEC
+      name: MTEB ATEC
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 53.4800486876876
+    - type: cos_sim_spearman
+      value: 54.27914644842898
+    - type: euclidean_pearson
+      value: 56.85762017857563
+    - type: euclidean_spearman
+      value: 54.3892743722252
+    - type: manhattan_pearson
+      value: 56.812630761505545
+    - type: manhattan_spearman
+      value: 54.359667416088556
+  - task:
+      type: Classification
+    dataset:
+      type: mteb/amazon_reviews_multi
+      name: MTEB AmazonReviewsClassification (zh)
+      config: zh
+      split: test
+      revision: 1399c76144fd37290681b995c656ef9b2e06e26d
+    metrics:
+    - type: accuracy
+      value: 40.33200000000001
+    - type: f1
+      value: 39.56855261607718
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/BQ
+      name: MTEB BQ
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 60.81359612041921
+    - type: cos_sim_spearman
+      value: 62.3148582435008
+    - type: euclidean_pearson
+      value: 61.21668579008443
+    - type: euclidean_spearman
+      value: 62.3526204140884
+    - type: manhattan_pearson
+      value: 61.1558631086567
+    - type: manhattan_spearman
+      value: 62.287696221478384
+  - task:
+      type: Clustering
+    dataset:
+      type: C-MTEB/CLSClusteringP2P
+      name: MTEB CLSClusteringP2P
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: v_measure
+      value: 38.98356815428385
+  - task:
+      type: Clustering
+    dataset:
+      type: C-MTEB/CLSClusteringS2S
+      name: MTEB CLSClusteringS2S
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: v_measure
+      value: 36.04329998232363
+  - task:
+      type: Reranking
+    dataset:
+      type: C-MTEB/CMedQAv1-reranking
+      name: MTEB CMedQAv1
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: map
+      value: 84.79178620472841
+    - type: mrr
+      value: 87.1725
+  - task:
+      type: Reranking
+    dataset:
+      type: C-MTEB/CMedQAv2-reranking
+      name: MTEB CMedQAv2
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: map
+      value: 84.89085057036931
+    - type: mrr
+      value: 87.46011904761905
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/CmedqaRetrieval
+      name: MTEB CmedqaRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 23.351
+    - type: map_at_10
+      value: 35.284
+    - type: map_at_100
+      value: 37.222
+    - type: map_at_1000
+      value: 37.338
+    - type: map_at_3
+      value: 31.135
+    - type: map_at_5
+      value: 33.445
+    - type: mrr_at_1
+      value: 36.134
+    - type: mrr_at_10
+      value: 44.282
+    - type: mrr_at_100
+      value: 45.31
+    - type: mrr_at_1000
+      value: 45.356
+    - type: mrr_at_3
+      value: 41.615
+    - type: mrr_at_5
+      value: 43.169000000000004
+    - type: ndcg_at_1
+      value: 36.134
+    - type: ndcg_at_10
+      value: 41.982
+    - type: ndcg_at_100
+      value: 49.672
+    - type: ndcg_at_1000
+      value: 51.669
+    - type: ndcg_at_3
+      value: 36.521
+    - type: ndcg_at_5
+      value: 38.858
+    - type: precision_at_1
+      value: 36.134
+    - type: precision_at_10
+      value: 9.515
+    - type: precision_at_100
+      value: 1.5779999999999998
+    - type: precision_at_1000
+      value: 0.183
+    - type: precision_at_3
+      value: 20.747
+    - type: precision_at_5
+      value: 15.229000000000001
+    - type: recall_at_1
+      value: 23.351
+    - type: recall_at_10
+      value: 52.798
+    - type: recall_at_100
+      value: 84.806
+    - type: recall_at_1000
+      value: 98.172
+    - type: recall_at_3
+      value: 36.513
+    - type: recall_at_5
+      value: 43.701
+  - task:
+      type: PairClassification
+    dataset:
+      type: C-MTEB/CMNLI
+      name: MTEB Cmnli
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: cos_sim_accuracy
+      value: 74.74443776307878
+    - type: cos_sim_ap
+      value: 83.8325812952643
+    - type: cos_sim_f1
+      value: 76.64593609264422
+    - type: cos_sim_precision
+      value: 70.78629431570607
+    - type: cos_sim_recall
+      value: 83.56324526537293
+    - type: dot_accuracy
+      value: 73.91461214672279
+    - type: dot_ap
+      value: 82.8769105611689
+    - type: dot_f1
+      value: 75.93478260869564
+    - type: dot_precision
+      value: 70.95267113548648
+    - type: dot_recall
+      value: 81.66939443535188
+    - type: euclidean_accuracy
+      value: 74.94888755261574
+    - type: euclidean_ap
+      value: 84.00606427216371
+    - type: euclidean_f1
+      value: 76.78665681410322
+    - type: euclidean_precision
+      value: 69.99615088529639
+    - type: euclidean_recall
+      value: 85.0362403553893
+    - type: manhattan_accuracy
+      value: 74.92483463619965
+    - type: manhattan_ap
+      value: 83.97546171072935
+    - type: manhattan_f1
+      value: 76.57105320779506
+    - type: manhattan_precision
+      value: 71.99917644636606
+    - type: manhattan_recall
+      value: 81.7629179331307
+    - type: max_accuracy
+      value: 74.94888755261574
+    - type: max_ap
+      value: 84.00606427216371
+    - type: max_f1
+      value: 76.78665681410322
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/CovidRetrieval
+      name: MTEB CovidRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 73.34
+    - type: map_at_10
+      value: 81.462
+    - type: map_at_100
+      value: 81.661
+    - type: map_at_1000
+      value: 81.663
+    - type: map_at_3
+      value: 79.742
+    - type: map_at_5
+      value: 80.886
+    - type: mrr_at_1
+      value: 73.656
+    - type: mrr_at_10
+      value: 81.432
+    - type: mrr_at_100
+      value: 81.632
+    - type: mrr_at_1000
+      value: 81.634
+    - type: mrr_at_3
+      value: 79.786
+    - type: mrr_at_5
+      value: 80.87100000000001
+    - type: ndcg_at_1
+      value: 73.656
+    - type: ndcg_at_10
+      value: 85.036
+    - type: ndcg_at_100
+      value: 85.83
+    - type: ndcg_at_1000
+      value: 85.884
+    - type: ndcg_at_3
+      value: 81.669
+    - type: ndcg_at_5
+      value: 83.699
+    - type: precision_at_1
+      value: 73.656
+    - type: precision_at_10
+      value: 9.715
+    - type: precision_at_100
+      value: 1.005
+    - type: precision_at_1000
+      value: 0.101
+    - type: precision_at_3
+      value: 29.293999999999997
+    - type: precision_at_5
+      value: 18.587999999999997
+    - type: recall_at_1
+      value: 73.34
+    - type: recall_at_10
+      value: 96.101
+    - type: recall_at_100
+      value: 99.473
+    - type: recall_at_1000
+      value: 99.895
+    - type: recall_at_3
+      value: 87.197
+    - type: recall_at_5
+      value: 92.044
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/DuRetrieval
+      name: MTEB DuRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 26.351999999999997
+    - type: map_at_10
+      value: 80.977
+    - type: map_at_100
+      value: 83.795
+    - type: map_at_1000
+      value: 83.836
+    - type: map_at_3
+      value: 56.388000000000005
+    - type: map_at_5
+      value: 71.089
+    - type: mrr_at_1
+      value: 90.75
+    - type: mrr_at_10
+      value: 93.648
+    - type: mrr_at_100
+      value: 93.71000000000001
+    - type: mrr_at_1000
+      value: 93.714
+    - type: mrr_at_3
+      value: 93.43299999999999
+    - type: mrr_at_5
+      value: 93.57600000000001
+    - type: ndcg_at_1
+      value: 90.75
+    - type: ndcg_at_10
+      value: 87.971
+    - type: ndcg_at_100
+      value: 90.594
+    - type: ndcg_at_1000
+      value: 90.998
+    - type: ndcg_at_3
+      value: 87.224
+    - type: ndcg_at_5
+      value: 86.032
+    - type: precision_at_1
+      value: 90.75
+    - type: precision_at_10
+      value: 41.975
+    - type: precision_at_100
+      value: 4.807
+    - type: precision_at_1000
+      value: 0.48900000000000005
+    - type: precision_at_3
+      value: 78.167
+    - type: precision_at_5
+      value: 65.85
+    - type: recall_at_1
+      value: 26.351999999999997
+    - type: recall_at_10
+      value: 88.714
+    - type: recall_at_100
+      value: 97.367
+    - type: recall_at_1000
+      value: 99.589
+    - type: recall_at_3
+      value: 58.483
+    - type: recall_at_5
+      value: 75.359
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/EcomRetrieval
+      name: MTEB EcomRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 46.2
+    - type: map_at_10
+      value: 56.548
+    - type: map_at_100
+      value: 57.172
+    - type: map_at_1000
+      value: 57.192
+    - type: map_at_3
+      value: 53.983000000000004
+    - type: map_at_5
+      value: 55.408
+    - type: mrr_at_1
+      value: 46.2
+    - type: mrr_at_10
+      value: 56.548
+    - type: mrr_at_100
+      value: 57.172
+    - type: mrr_at_1000
+      value: 57.192
+    - type: mrr_at_3
+      value: 53.983000000000004
+    - type: mrr_at_5
+      value: 55.408
+    - type: ndcg_at_1
+      value: 46.2
+    - type: ndcg_at_10
+      value: 61.912
+    - type: ndcg_at_100
+      value: 64.834
+    - type: ndcg_at_1000
+      value: 65.36
+    - type: ndcg_at_3
+      value: 56.577
+    - type: ndcg_at_5
+      value: 59.15899999999999
+    - type: precision_at_1
+      value: 46.2
+    - type: precision_at_10
+      value: 7.89
+    - type: precision_at_100
+      value: 0.923
+    - type: precision_at_1000
+      value: 0.096
+    - type: precision_at_3
+      value: 21.367
+    - type: precision_at_5
+      value: 14.08
+    - type: recall_at_1
+      value: 46.2
+    - type: recall_at_10
+      value: 78.9
+    - type: recall_at_100
+      value: 92.30000000000001
+    - type: recall_at_1000
+      value: 96.39999999999999
+    - type: recall_at_3
+      value: 64.1
+    - type: recall_at_5
+      value: 70.39999999999999
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/IFlyTek-classification
+      name: MTEB IFlyTek
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 44.24778761061947
+    - type: f1
+      value: 36.410133889743115
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/JDReview-classification
+      name: MTEB JDReview
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 86.09756097560975
+    - type: ap
+      value: 53.85203082125175
+    - type: f1
+      value: 80.61318243910114
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/LCQMC
+      name: MTEB LCQMC
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 70.49411615067606
+    - type: cos_sim_spearman
+      value: 75.80607876548899
+    - type: euclidean_pearson
+      value: 74.67002802430761
+    - type: euclidean_spearman
+      value: 76.00290181304833
+    - type: manhattan_pearson
+      value: 74.66745498313495
+    - type: manhattan_spearman
+      value: 76.00460005446307
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/MMarcoRetrieval
+      name: MTEB MMarcoRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 64.388
+    - type: map_at_10
+      value: 73.94800000000001
+    - type: map_at_100
+      value: 74.279
+    - type: map_at_1000
+      value: 74.29
+    - type: map_at_3
+      value: 72.017
+    - type: map_at_5
+      value: 73.29599999999999
+    - type: mrr_at_1
+      value: 66.648
+    - type: mrr_at_10
+      value: 74.59599999999999
+    - type: mrr_at_100
+      value: 74.885
+    - type: mrr_at_1000
+      value: 74.896
+    - type: mrr_at_3
+      value: 72.88900000000001
+    - type: mrr_at_5
+      value: 74.017
+    - type: ndcg_at_1
+      value: 66.648
+    - type: ndcg_at_10
+      value: 77.833
+    - type: ndcg_at_100
+      value: 79.306
+    - type: ndcg_at_1000
+      value: 79.605
+    - type: ndcg_at_3
+      value: 74.18599999999999
+    - type: ndcg_at_5
+      value: 76.352
+    - type: precision_at_1
+      value: 66.648
+    - type: precision_at_10
+      value: 9.472999999999999
+    - type: precision_at_100
+      value: 1.0210000000000001
+    - type: precision_at_1000
+      value: 0.105
+    - type: precision_at_3
+      value: 28.055999999999997
+    - type: precision_at_5
+      value: 17.974
+    - type: recall_at_1
+      value: 64.388
+    - type: recall_at_10
+      value: 89.143
+    - type: recall_at_100
+      value: 95.794
+    - type: recall_at_1000
+      value: 98.152
+    - type: recall_at_3
+      value: 79.55499999999999
+    - type: recall_at_5
+      value: 84.694
+  - task:
+      type: Classification
+    dataset:
+      type: mteb/amazon_massive_intent
+      name: MTEB MassiveIntentClassification (zh-CN)
+      config: zh-CN
+      split: test
+      revision: 31efe3c427b0bae9c22cbb560b8f15491cc6bed7
+    metrics:
+    - type: accuracy
+      value: 67.99932750504371
+    - type: f1
+      value: 66.07217986916525
+  - task:
+      type: Classification
+    dataset:
+      type: mteb/amazon_massive_scenario
+      name: MTEB MassiveScenarioClassification (zh-CN)
+      config: zh-CN
+      split: test
+      revision: 7d571f92784cd94a019292a1f45445077d0ef634
+    metrics:
+    - type: accuracy
+      value: 72.08137188971082
+    - type: f1
+      value: 72.42255159515156
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/MedicalRetrieval
+      name: MTEB MedicalRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 49.6
+    - type: map_at_10
+      value: 56.04
+    - type: map_at_100
+      value: 56.584999999999994
+    - type: map_at_1000
+      value: 56.637
+    - type: map_at_3
+      value: 54.7
+    - type: map_at_5
+      value: 55.505
+    - type: mrr_at_1
+      value: 49.7
+    - type: mrr_at_10
+      value: 56.094
+    - type: mrr_at_100
+      value: 56.638999999999996
+    - type: mrr_at_1000
+      value: 56.691
+    - type: mrr_at_3
+      value: 54.75
+    - type: mrr_at_5
+      value: 55.54
+    - type: ndcg_at_1
+      value: 49.6
+    - type: ndcg_at_10
+      value: 59.038000000000004
+    - type: ndcg_at_100
+      value: 61.964
+    - type: ndcg_at_1000
+      value: 63.482000000000006
+    - type: ndcg_at_3
+      value: 56.297
+    - type: ndcg_at_5
+      value: 57.743
+    - type: precision_at_1
+      value: 49.6
+    - type: precision_at_10
+      value: 6.84
+    - type: precision_at_100
+      value: 0.828
+    - type: precision_at_1000
+      value: 0.095
+    - type: precision_at_3
+      value: 20.3
+    - type: precision_at_5
+      value: 12.879999999999999
+    - type: recall_at_1
+      value: 49.6
+    - type: recall_at_10
+      value: 68.4
+    - type: recall_at_100
+      value: 82.8
+    - type: recall_at_1000
+      value: 95.1
+    - type: recall_at_3
+      value: 60.9
+    - type: recall_at_5
+      value: 64.4
+  - task:
+      type: Reranking
+    dataset:
+      type: C-MTEB/Mmarco-reranking
+      name: MTEB MMarcoReranking
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map
+      value: 27.274633976199482
+    - type: mrr
+      value: 25.85952380952381
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/MultilingualSentiment-classification
+      name: MTEB MultilingualSentiment
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 70.15
+    - type: f1
+      value: 70.12595878910165
+  - task:
+      type: PairClassification
+    dataset:
+      type: C-MTEB/OCNLI
+      name: MTEB Ocnli
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: cos_sim_accuracy
+      value: 68.05630752571737
+    - type: cos_sim_ap
+      value: 72.9224765568519
+    - type: cos_sim_f1
+      value: 72.97297297297295
+    - type: cos_sim_precision
+      value: 62.1380846325167
+    - type: cos_sim_recall
+      value: 88.3843717001056
+    - type: dot_accuracy
+      value: 68.11044937736871
+    - type: dot_ap
+      value: 72.84095585142163
+    - type: dot_f1
+      value: 72.59574468085107
+    - type: dot_precision
+      value: 60.79828937990022
+    - type: dot_recall
+      value: 90.07391763463569
+    - type: euclidean_accuracy
+      value: 67.73145641580942
+    - type: euclidean_ap
+      value: 72.8584903276338
+    - type: euclidean_f1
+      value: 72.82095319879778
+    - type: euclidean_precision
+      value: 61.3603473227207
+    - type: euclidean_recall
+      value: 89.54593453009504
+    - type: manhattan_accuracy
+      value: 67.56903086085543
+    - type: manhattan_ap
+      value: 72.81719990959621
+    - type: manhattan_f1
+      value: 72.95855560114896
+    - type: manhattan_precision
+      value: 59.664429530201346
+    - type: manhattan_recall
+      value: 93.8753959873284
+    - type: max_accuracy
+      value: 68.11044937736871
+    - type: max_ap
+      value: 72.9224765568519
+    - type: max_f1
+      value: 72.97297297297295
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/OnlineShopping-classification
+      name: MTEB OnlineShopping
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 90.27
+    - type: ap
+      value: 87.25468287842568
+    - type: f1
+      value: 90.24230569233008
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/PAWSX
+      name: MTEB PAWSX
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 34.445576951449894
+    - type: cos_sim_spearman
+      value: 38.3120125820568
+    - type: euclidean_pearson
+      value: 38.80156903904639
+    - type: euclidean_spearman
+      value: 38.240808371401656
+    - type: manhattan_pearson
+      value: 38.77317222891622
+    - type: manhattan_spearman
+      value: 38.230008722746646
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/QBQTC
+      name: MTEB QBQTC
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 37.990494014067295
+    - type: cos_sim_spearman
+      value: 38.218416274161385
+    - type: euclidean_pearson
+      value: 35.91543518481725
+    - type: euclidean_spearman
+      value: 37.34947320962178
+    - type: manhattan_pearson
+      value: 35.90653204921896
+    - type: manhattan_spearman
+      value: 37.3484819621432
+  - task:
+      type: STS
+    dataset:
+      type: mteb/sts22-crosslingual-sts
+      name: MTEB STS22 (zh)
+      config: zh
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 66.10227125673059
+    - type: cos_sim_spearman
+      value: 66.65529695940144
+    - type: euclidean_pearson
+      value: 64.41045931064728
+    - type: euclidean_spearman
+      value: 66.48371335308076
+    - type: manhattan_pearson
+      value: 64.40881380301438
+    - type: manhattan_spearman
+      value: 66.4530857331391
+  - task:
+      type: STS
+    dataset:
+      type: C-MTEB/STSB
+      name: MTEB STSB
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: cos_sim_pearson
+      value: 74.46374847096926
+    - type: cos_sim_spearman
+      value: 74.42746155066217
+    - type: euclidean_pearson
+      value: 74.29184569507011
+    - type: euclidean_spearman
+      value: 74.88985827017852
+    - type: manhattan_pearson
+      value: 74.28083071864158
+    - type: manhattan_spearman
+      value: 74.8848458821044
+  - task:
+      type: Reranking
+    dataset:
+      type: C-MTEB/T2Reranking
+      name: MTEB T2Reranking
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map
+      value: 66.95528971496414
+    - type: mrr
+      value: 77.09135312892928
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/T2Retrieval
+      name: MTEB T2Retrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 26.531
+    - type: map_at_10
+      value: 74.504
+    - type: map_at_100
+      value: 78.321
+    - type: map_at_1000
+      value: 78.393
+    - type: map_at_3
+      value: 52.288000000000004
+    - type: map_at_5
+      value: 64.228
+    - type: mrr_at_1
+      value: 88.331
+    - type: mrr_at_10
+      value: 91.044
+    - type: mrr_at_100
+      value: 91.156
+    - type: mrr_at_1000
+      value: 91.161
+    - type: mrr_at_3
+      value: 90.55499999999999
+    - type: mrr_at_5
+      value: 90.857
+    - type: ndcg_at_1
+      value: 88.331
+    - type: ndcg_at_10
+      value: 82.468
+    - type: ndcg_at_100
+      value: 86.494
+    - type: ndcg_at_1000
+      value: 87.211
+    - type: ndcg_at_3
+      value: 83.979
+    - type: ndcg_at_5
+      value: 82.40899999999999
+    - type: precision_at_1
+      value: 88.331
+    - type: precision_at_10
+      value: 41.223
+    - type: precision_at_100
+      value: 4.984
+    - type: precision_at_1000
+      value: 0.515
+    - type: precision_at_3
+      value: 73.603
+    - type: precision_at_5
+      value: 61.634
+    - type: recall_at_1
+      value: 26.531
+    - type: recall_at_10
+      value: 81.432
+    - type: recall_at_100
+      value: 94.404
+    - type: recall_at_1000
+      value: 98.085
+    - type: recall_at_3
+      value: 54.055
+    - type: recall_at_5
+      value: 67.726
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/TNews-classification
+      name: MTEB TNews
+      config: default
+      split: validation
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 46.543
+    - type: f1
+      value: 45.26659807296124
+  - task:
+      type: Clustering
+    dataset:
+      type: C-MTEB/ThuNewsClusteringP2P
+      name: MTEB ThuNewsClusteringP2P
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: v_measure
+      value: 60.575199180159586
+  - task:
+      type: Clustering
+    dataset:
+      type: C-MTEB/ThuNewsClusteringS2S
+      name: MTEB ThuNewsClusteringS2S
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: v_measure
+      value: 52.55759510188472
+  - task:
+      type: Retrieval
+    dataset:
+      type: C-MTEB/VideoRetrieval
+      name: MTEB VideoRetrieval
+      config: default
+      split: dev
+      revision: None
+    metrics:
+    - type: map_at_1
+      value: 56.2
+    - type: map_at_10
+      value: 66.497
+    - type: map_at_100
+      value: 66.994
+    - type: map_at_1000
+      value: 67.012
+    - type: map_at_3
+      value: 64.483
+    - type: map_at_5
+      value: 65.783
+    - type: mrr_at_1
+      value: 56.2
+    - type: mrr_at_10
+      value: 66.497
+    - type: mrr_at_100
+      value: 66.994
+    - type: mrr_at_1000
+      value: 67.012
+    - type: mrr_at_3
+      value: 64.483
+    - type: mrr_at_5
+      value: 65.783
+    - type: ndcg_at_1
+      value: 56.2
+    - type: ndcg_at_10
+      value: 71.18100000000001
+    - type: ndcg_at_100
+      value: 73.411
+    - type: ndcg_at_1000
+      value: 73.819
+    - type: ndcg_at_3
+      value: 67.137
+    - type: ndcg_at_5
+      value: 69.461
+    - type: precision_at_1
+      value: 56.2
+    - type: precision_at_10
+      value: 8.57
+    - type: precision_at_100
+      value: 0.9570000000000001
+    - type: precision_at_1000
+      value: 0.099
+    - type: precision_at_3
+      value: 24.933
+    - type: precision_at_5
+      value: 16.08
+    - type: recall_at_1
+      value: 56.2
+    - type: recall_at_10
+      value: 85.7
+    - type: recall_at_100
+      value: 95.7
+    - type: recall_at_1000
+      value: 98.8
+    - type: recall_at_3
+      value: 74.8
+    - type: recall_at_5
+      value: 80.4
+  - task:
+      type: Classification
+    dataset:
+      type: C-MTEB/waimai-classification
+      name: MTEB Waimai
+      config: default
+      split: test
+      revision: None
+    metrics:
+    - type: accuracy
+      value: 85.54
+    - type: ap
+      value: 68.02479661585015
+    - type: f1
+      value: 83.87871999963863
 ---
+
+
+## piccolo-large-zh
