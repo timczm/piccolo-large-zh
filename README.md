@@ -1057,3 +1057,62 @@ model-index:
 
 
 ## piccolo-large-zh
+
+piccolo是一个通用embedding模型(中文), 由来自商汤科技的通用模型组完成训练。piccolo借鉴了E5以及GTE的训练流程，采用了两阶段的训练方式。
+在第一阶段中，我们搜集和爬取了4亿的中文文本对(可视为弱监督文本对数据)，并采用二元组的softmax对比学习损失来优化模型。
+在第二阶段中，我们搜集整理了2000万人工标注的中文文本对(精标数据)，并采用带有难负样本的三元组的softmax对比学习损失来帮助模型更好地优化。
+目前，我们提供了piccolo-base-zh和piccolo-large-zh两个模型。
+
+piccolo is a general text embedding model(chinese), powered by General Model Group from SenseTime Research. 
+Inspired from E5 and GTE, piccolo is trained using a two stage pipeline. On the first stage, we collect and crawl 400 million weakly supervised Chinese text pairs from the Internet, 
+and train the model with the pair(text and text pos) softmax contrastive loss. 
+On the second stage, we collect 20 million human labeled chinese text pairs dataset, and finetune the model with tiplet (text, text_pos, text_neg) contrastive loss. 
+Currently here we offer two different sizes of models, including piccolo-base-zh, piccolo-large-zh. 
+
+## Metric
+我们将piccolo与其他的开源embedding模型在CMTEB榜单上进行了比较，请参考CMTEB榜单。我们在[eval文件夹](https://huggingface.co/sensenova/piccolo-base-zh/tree/main/eval)中提供了复现结果的脚本。
+
+We compared the performance of the piccolo with other embedding models on the C-MTEB benchmark. please refer to the C-MTEB leaderboard. 
+we provide scripts in ["eval" folder](https://huggingface.co/sensenova/piccolo-base-zh/tree/main/eval) for results reproducing.
+
+
+| Model Name | Model Size (GB) | Dimension | Sequence Length | Average (35) | Classification (9) | Clustering (4) | Pair Classification (2) | Reranking (4) | Retrieval (8) | STS (8) |
+|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| [**piccolo-large-zh**] | 0.65 | 1024 | 512 | **64.11** | 67.03 | 47.04 | 78.38 | 65.98 | 70.93 | 58.02 |
+| [bge-large-zh]| 1.3 | 1024| 512 | 63.96 | 68.32 | 48.39 | 78.94 | 65.11 | 71.52 | 54.98 |
+| [**piccolo-base-zh**]| 0.2 | 768 | 512 | **63.66** | 66.98 | 47.12 | 76.61 | 66.68 | 71.2 | 55.9 |
+| [bge-large-zh-no-instruct]| 1.3 | 1024 | 512 | 63.4 | 68.58 | 50.01 | 76.77 | 64.9 | 70.54 | 53 |
+| [bge-base-zh]| 0.41 | 768 | 512 | 62.8 | 67.07 | 47.64 | 77.5 | 64.91 | 69.53 | 54.12 |
+
+## Usage
+在sentence-transformer package中可以很容易地调用piccolo模型
+```python
+# for s2s dataset, you can use piccolo as below
+# 对于短对短数据集，下面是通用的使用方式
+from sentence_transformers import SentenceTransformer
+sentences = ["数据1", "数据2"]
+model = SentenceTransformer('sensenova/piccolo-base-zh')
+embeddings_1 = model.encode(sentences, normalize_embeddings=True)
+embeddings_2 = model.encode(sentences, normalize_embeddings=True)
+similarity = embeddings_1 @ embeddings_2.T
+print(similarity)
+# for s2p dataset, we recommend to add instruction for passage retrieval
+# 对于短对长数据集，我们推荐添加instruction，来帮助模型更好地进行检索。
+from sentence_transformers import SentenceTransformer
+queries = ['query_1', 'query_2']
+passages = ["doc_1", "doc_2"]
+model = SentenceTransformer('sensenova/piccolo-base-zh')
+q_embeddings = model.encode(["查询：" + q for q in queries], normalize_embeddings=True)
+p_embeddings = model.encode(["结果：" + p for p in passages], normalize_embeddings=True)
+scores = q_embeddings @ p_embeddings.T
+```
+
+## Training Detail
+TODO
+
+## acknowledgement
+
+piccolo is powered by Genral Model group from SenseTime Research. 
+[Jinkin](https://huggingface.co/Jinkin) complete code implementation and model training. 
+[Jinkin](https://huggingface.co/Jinkin), [CCCCxxx](https://huggingface.co/CCCCxxx) completed the data collection、processing and model evaluation together. 
+Project is led by [Gaomengya](https://huggingface.co/gaomengya) and [chaorenwu111](https://huggingface.co/chaorenwu111)
