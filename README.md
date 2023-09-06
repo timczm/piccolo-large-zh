@@ -1110,7 +1110,13 @@ scores = q_embeddings @ p_embeddings.T
 ## Training Detail
 TODO
 
-## acknowledgement
+## License
+Piccolo 使用 MIT License，免费商用。
+Piccolo use MIT License. It can be used for commercial purposes free of charge.
+
+## Acknowledgement
+piccolo 由来自商汤科技研究院的通用模型组完成训练，[Jinkin](https://huggingface.co/Jinkin) 完成了代码实现和模型训练， [Jinkin](https://huggingface.co/Jinkin), 
+[CCCCxxx](https://huggingface.co/CCCCxxx) 一起完成了数据搜集、整理和评测工作. 项目由 [Gaomengya](https://huggingface.co/gaomengya) 和 [chaorenwu111](https://huggingface.co/chaorenwu111) 主导。
 
 piccolo is powered by Genral Model group from SenseTime Research. 
 [Jinkin](https://huggingface.co/Jinkin) complete code implementation and model training. 
