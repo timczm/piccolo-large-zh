@@ -1108,7 +1108,50 @@ scores = q_embeddings @ p_embeddings.T
 ```
 
 ## Training Detail
-TODO
+### pretrain
+
+pretrain 通常不需要太大的max length, 推荐128。小的max length用以提高batch size，加快训练速度，从而适应大规模数据。
+pretrain 损失我们采用二元组contrastive loss，不加入hard negative, 直接采用inbatch negative，在实际训练中，我们使用了32张40G A100进行训练，单卡的batch size为1024。
+
+Pretrain usually does not require a large max length, and 128 is recommended. A small max length is used to increase batch size and speed up training to adapt to large-scale data.
+We use binary contrastive loss for pretrain loss, without adding hard negative, and directly use inbatch negative. In actual training, we used 32 40G A100 for training, and the batch size of a single card is 1024.
+
+### finetune
+finetune 通常会将 max length扩增到512。用以适应更大长度的文本输入，finetune时会多sample S2P的数据，以增强模型在retrieval任务上的性能。
+finetune 损失采用三元组contrastive loss，加入hard negative，neg num通常设置为2-7，loss计算方式可以参考GTE里的improved contrastive loss。
+注意: 我们给query和passage设置了不同的max length，query的max length始终保持在64。
+
+For finetuning, we usually expands the max length to 512. To adapt to larger length text input, finetune will sample more S2P data to enhance the performance of the model on retrieval tasks.
+The finetune loss uses triple contrastive loss, adding hard negative. Neg num is usually set to 2-7. The loss calculation method can refer to the improved contrastive loss in GTE.
+Note: We set different max lengths for query and passage, and the max length of query is always kept at 64.
+
+### Others
+一些有用的trick:
+1. 减小显存的方式: fp16 + gradient checkpointing + ZERO STAGE1 (stage2 不支持双塔结构下的gradient checkpointing) 相关issue见: https://github.com/microsoft/DeepSpeed/issues/988
+2. dataset sampler，我们采用了M3E的dataset sampler，用以保证每个batch里的样本均来自于一个dataset，负样本更有价值。
+3. instruction。instruction在我们的实验中对retrieval任务有非常大的性能提升，我们在每个训练样本前都加入'查询: '和'结果: '这样的instruction。
+
+some useful tricks:
+1. The way to reduce memory usage: fp16 + gradient checkpointing + ZERO STAGE1 (stage2 does not support gradient checkpointing under the double-tower structure) For related issues, see: https://github.com/microsoft/DeepSpeed/issues/ 988
+2. Dataset sampler, we use M3E's dataset sampler to ensure that the samples in each batch come from a dataset, and negative samples are more valuable.
+3. instruction. Instruction has greatly improved the performance of the retrieval task in our experiments. We added instructions like 'query: ' and 'result: ' before each training sample.
+
+## Reference
+
+这里我们列出了我们参考过的embedding项目和论文
+1. [M3E](https://github.com/wangyuxinwhy/uniem)。非常棒的中文开源embedding项目，收集和整理了较多的中文高质量数据集，uniem也是一个不错的框架。
+2. [Text2vec](https://github.com/shibing624/text2vec)。另一个一个非常棒的中文开源embedding项目。
+3. [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)。智源AI开源的embedding模型，收集和整理了CMTEB benchmark，填补了中文embedding系统性评测的空缺。
+4. [E5](https://github.com/microsoft/unilm/tree/master/e5)。来自微软的一篇文章，有非常详细的消融实验以及数据处理过滤细节。
+5. [GTE](https://arxiv.org/abs/2308.03281)。一篇来自阿里达摩的embedding论文。
+
+Here we list the embedding projects and papers we have referenced
+1. [M3E](https://github.com/wangyuxinwhy/uniem). A great Chinese open source embedding project that collects and organizes a large number of high-quality Chinese datasets. Uniem is also a good framework.
+2. [Text2vec](https://github.com/shibing624/text2vec). Another great Chinese open source embedding project.
+3. [Flag Embedding](https://github.com/FlagOpen/FlagEmbedding). Zhiyuan AI’s open source embedding model.They collect and organize CMTEB benchmark, filling the gap in systematic evaluation of Chinese embeddings.
+4. [E5](https://github.com/microsoft/unilm/tree/master/e5). Powerd by microsoft，producing very detailed ablation experiments and data processing filtering details.
+5. [GTE](https://arxiv.org/abs/2308.03281). An embedding paper from Alibaba Damo.
+
 
 ## License
 Piccolo 使用 MIT License，免费商用。
