@@ -1143,14 +1143,14 @@ some useful tricks:
 2. [Text2vec](https://github.com/shibing624/text2vec)。另一个一个非常棒的中文开源embedding项目。
 3. [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding)。智源AI开源的embedding模型，收集和整理了CMTEB benchmark，填补了中文embedding系统性评测的空缺。
 4. [E5](https://github.com/microsoft/unilm/tree/master/e5)。来自微软的一篇文章，有非常详细的消融实验以及数据处理过滤细节。
-5. [GTE](https://arxiv.org/abs/2308.03281)。一篇来自阿里达摩的embedding论文。
+5. [GTE](https://huggingface.co/thenlper/gte-base)。一篇来自阿里达摩的embedding论文。
 
 Here we list the embedding projects and papers we have referenced
 1. [M3E](https://github.com/wangyuxinwhy/uniem). A great Chinese open source embedding project that collects and organizes a large number of high-quality Chinese datasets. Uniem is also a good framework.
 2. [Text2vec](https://github.com/shibing624/text2vec). Another great Chinese open source embedding project.
 3. [Flag Embedding](https://github.com/FlagOpen/FlagEmbedding). Zhiyuan AI’s open source embedding model.They collect and organize CMTEB benchmark, filling the gap in systematic evaluation of Chinese embeddings.
 4. [E5](https://github.com/microsoft/unilm/tree/master/e5). Powerd by microsoft，producing very detailed ablation experiments and data processing filtering details.
-5. [GTE](https://arxiv.org/abs/2308.03281). An embedding paper from Alibaba Damo.
+5. [GTE](https://huggingface.co/thenlper/gte-base). An embedding paper from Alibaba Damo.
 
 
 ## License
