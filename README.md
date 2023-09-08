@@ -1160,10 +1160,10 @@ Piccolo use MIT License. It can be used for commercial purposes free of charge.
 ## Acknowledgement
 piccolo 由来自商汤科技研究院的通用模型组完成训练，[Jinkin](https://huggingface.co/Jinkin) 完成了代码实现和模型训练， [Jinkin](https://huggingface.co/Jinkin), 
 [CCCCxxx](https://huggingface.co/CCCCxxx) 一起完成了数据搜集、整理和评测工作. 项目由 [Gaomengya](https://huggingface.co/gaomengya) 和 [chaorenwu111](https://huggingface.co/chaorenwu111) 主导。
-同时，感谢[lux0933](https://huggingface.co/lux0933)的交流与讨论，提供了非常多有用的建议。
+同时，感谢[lux0933](https://huggingface.co/lux0933)以及[yangkai001](https://huggingface.co/yangkai001)的交流与讨论，提供了非常多有用的建议。
 
 piccolo is powered by Genral Model group from SenseTime Research. 
 [Jinkin](https://huggingface.co/Jinkin) complete code implementation and model training. 
 [Jinkin](https://huggingface.co/Jinkin), [CCCCxxx](https://huggingface.co/CCCCxxx) completed the data collection、processing and model evaluation together. 
 Project is led by [Gaomengya](https://huggingface.co/gaomengya) and [chaorenwu111](https://huggingface.co/chaorenwu111). 
-At the same time, thank [lux0933](https://huggingface.co/lux0933) for the discussion, which provide a lot of useful suggestions.
+At the same time, thank [lux0933](https://huggingface.co/lux0933) and [yangkai001](https://huggingface.co/yangkai001) for the discussion, which provide a lot of useful suggestions.
